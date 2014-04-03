@@ -9,7 +9,16 @@
          <?php  
          
             //phpinfo();
-         
+         /*
+          * Variables in PHP are represented by a dollar sign ($) followed by the name of the variable.  
+            The variable name is case-sensitive. 
+            $myvar, $myarray, etc.
+            A valid variable name starts with a letter or underscore, followed by any number of letters, numbers, or underscores.
+            There is no need to declare the variables or declare a type.
+            All variables are loosely type.  So they can be of any type.
+            Boolean, String, Integer, float(double), Array, Object, NULL, resource.
+
+          */
             $pageTitle1 = "hello";
             $pageTitle2 = "everyone";
             $pageTitle3 = $pageTitle1." ".$pageTitle2;
@@ -98,7 +107,23 @@
                     break;
             }
             
-            date($v)
+          
+            //date($v);
+            
+            
+            
+            /*
+             * Operators
+            $a == $b Equal
+            $a === $b Identical
+            $a != $b Not equal
+            $a !== $b Not identical
+            $a < $b Less than
+            $a > $b Greater than
+            $a <= $b Less than or equal to 
+            $a >= $b Greater than or equal to 
+
+            */
         ?>
             
     </body>
