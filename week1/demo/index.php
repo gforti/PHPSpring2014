@@ -28,28 +28,28 @@
         ?>
         <select>
             <option></option>
-        <?php
-        // put your code here
-        
-        echo "<h1>hello everyone</h1>";
-        
-        $arr = array('red', 'green', 'blue');
-        
-        $arr2 = array( 'color1' => 'red', 'color2'=> 'green', 'color3' => 'blue');
-        
-        $i = 3;
-        while ( $i-- ) {
-            echo "<option>$arr[$i]</option>";            
-        }
-        
-        foreach ($arr2 as $k => $v) {
-         echo "<option value='$k'>$v</option>";    
-        }
-                
-        
-        ?>
+            <?php
+            // put your code here
+
+            echo "<h1>hello everyone</h1>";
+
+            $arr = array('red', 'green', 'blue');
+
+            $arr2 = array( 'color1' => 'red', 'color2'=> 'green', 'color3' => 'blue');
+
+            $i = 3;
+            while ( $i-- ) {
+                echo "<option>$arr[$i]</option>";            
+            }
+
+            foreach ($arr2 as $k => $v) {
+             echo "<option value='$k'>$v</option>";    
+            }
+
+
+            ?>
             
-           </select> 
+          </select> 
             <?php
             /*
              * Testing from php.net
@@ -124,6 +124,10 @@
             $a >= $b Greater than or equal to 
 
             */
+            
+            
+            
+            
         ?>
             
     </body>
