@@ -18,7 +18,11 @@ class Page {
     public $title = '';
     private $nav = array();
     
-    
+    function __construct($title, $nav) {
+        $this->title = $title;
+        $this->setNav($nav);
+    }
+
     public function setNav($navArr) {
         
         if (is_array($navArr) && count($navArr) ) {
