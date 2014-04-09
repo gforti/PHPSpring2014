@@ -17,6 +17,12 @@ class shape {
     
     private $shape;
     
+    /*
+     public function shape($shapeType){
+     
+        
+    }*/
+    
     public function __construct($shapeType) {
         $this->setShape($shapeType);
     }
@@ -28,6 +34,8 @@ class shape {
     protected function setShape($shape) {
         $this->shape = $shape;
     }
+    
+    
 
     
 }
