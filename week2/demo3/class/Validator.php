@@ -22,8 +22,13 @@ class Validator {
   *
   * @return boolean
   */    
-    public function isEmailValid($email) {
+    public function emailIsValid($email) {
         
+        if ( is_string($email) && !empty($email) && preg_match("/[A-Za-z0-9_]{2,}+@[A-Za-z0-9_]{2,}+\.[A-Za-z0-9_]{2,}/",$email) != 0 ) {
+            return true;
+        }
+        
+        return false;
     }
     
    /**
@@ -34,7 +39,7 @@ class Validator {
     *
     * @return boolean
     */    
-    public function isNameValid($name) {
+    public function nameIsValid($name) {
         
     }
 }

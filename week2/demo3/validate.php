@@ -1,3 +1,4 @@
+<?php include 'dependency.php'; ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -12,10 +13,17 @@ and open the template in the editor.
     <body>
         <?php
         // put your code here
-               
+        
         $name = 'Gabriel Forti';
-        $email = 'myEMail@.com';
+        $email = 'myEMail@fffg.com';
        
+        $validate = new Validator();
+        
+        if ( $validate->emailIsValid($email) ) {
+            echo '<p>Email is valid</p>';
+        } else {
+            echo '<p>Email is <strong>NOT</strong> valid</p>';
+        }
         
         ?>
     </body>
