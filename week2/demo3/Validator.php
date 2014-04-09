@@ -13,4 +13,28 @@
  */
 class Validator {
     //put your code here
+    
+  /**
+  * A method to check if an email is valid.
+  *
+  *
+  * @param string $email must be a valid email
+  *
+  * @return boolean
+  */    
+    public function isEmailValid($email) {
+        
+    }
+    
+   /**
+    * A method to check is a name is valid.
+    *
+    *
+    * @param string $name must be a valid person name
+    *
+    * @return boolean
+    */    
+    public function isNameValid($name) {
+        
+    }
 }
