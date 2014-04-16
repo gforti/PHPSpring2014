@@ -14,7 +14,8 @@ and open the template in the editor.
         
         <?php
         
-            print_r($_POST);
+            print_r(htmlentities($_POST['email']));
+            print_r($_SERVER['HTTP_HOST']);
             echo '<hr>';
             $email = filter_input(INPUT_POST, 'email');
             $username = filter_input(INPUT_POST, 'username');
