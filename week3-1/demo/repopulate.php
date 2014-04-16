@@ -13,6 +13,12 @@ and open the template in the editor.
         <?php
         // put your code here
         
+        /*
+         * The idea to populate form fields is to output the value
+         * into the form field.  using the filter_input function we
+         * can get the post value and echo it out into the input value
+         * attribute
+         */
         
             $email = filter_input(INPUT_POST, 'email');
             $username = filter_input(INPUT_POST, 'username');

@@ -14,6 +14,13 @@ and open the template in the editor.
         
         <?php
         
+        /*
+         * you can access the post data with $_POST or using the 
+         * filter_input function.  It is recommended to use the 
+         * filter_input function.  if you have to echo back data
+         * to the page make sure to filter the user data from the post back
+         * or use the htmlentities function for security.
+         */
             print_r(htmlentities($_POST['email']));
             print_r($_SERVER['HTTP_HOST']);
             echo '<hr>';
