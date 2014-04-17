@@ -24,7 +24,11 @@ and open the template in the editor.
             print_r(htmlentities($_POST['email']));
             print_r($_SERVER['HTTP_HOST']);
             echo '<hr>';
-            $email = filter_input(INPUT_POST, 'email');
+            $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+            
+            if ( empty($email) ) {
+                echo 'email bad';
+            }
             $username = filter_input(INPUT_POST, 'username');
             $password = filter_input(INPUT_POST, 'password');
             
