@@ -13,7 +13,11 @@ and open the template in the editor.
         <?php
         // put your code here
         
+            include('lib/Signup.php');
+        
             $signup = new Signup();
+            
+            
         ?>
         
         
@@ -21,7 +25,7 @@ and open the template in the editor.
            <fieldset>
 		<legend>Sign-up Form:</legend>
                 <label for="email">E-mail:</label> 
-                <input id="email" type="text" name="email" value="" /> <br />
+                <input id="email" type="text" name="email" value="<?php echo $signup->getEmail(); ?>" /> <br />
                 
                 
                 <label for="username">Username:</label>
