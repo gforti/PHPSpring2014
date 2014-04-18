@@ -1,3 +1,4 @@
+<?php include 'dependency.php'; ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -12,9 +13,7 @@ and open the template in the editor.
     <body>
         <?php
         // put your code here
-        
-            include('lib/Signup.php');
-        
+                
             $signup = new Signup();
             
             
@@ -29,7 +28,7 @@ and open the template in the editor.
                 
                 
                 <label for="username">Username:</label>
-                <input id="username" type="text" name="username" value="" /> <br /> 
+                <input id="username" type="text" name="username" value="<?php echo $signup->getUsername(); ?>" /> <br /> 
                 
                 
                 <label for="password">Password:</label>

@@ -31,7 +31,10 @@ class Signup {
     
     function __construct() {
         $email = filter_input(INPUT_POST, 'email');
-        $this->setEmail($email);        
+        $this->setEmail($email); 
+        
+        $username = filter_input(INPUT_POST, 'username');
+        $this->setUsername($username); 
     }
 
     
@@ -54,7 +57,9 @@ class Signup {
     }
 
     public function setEmail($email) {
-        $this->email = $email;
+        if ( Validator::emailIsValid($email) ) {
+            $this->email = $email;
+        }
     }
 
     public function setUsername($username) {
