@@ -16,7 +16,7 @@ and open the template in the editor.
                 
             $signup = new Signup();
             
-            $signup->emailEntryIsValid();
+           $signup->emailEntryIsValid();
             print_r($signup->getErrors());
         ?>
         

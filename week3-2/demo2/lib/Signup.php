@@ -31,11 +31,10 @@ class Signup {
     private $errors = array();
             
     function __construct() {
-        $email = filter_input(INPUT_POST, 'email');
-        $this->setEmail($email); 
-        
-        $username = filter_input(INPUT_POST, 'username');
-        $this->setUsername($username); 
+       
+        $this->email = filter_input(INPUT_POST, 'email');
+      
+        $this->username = filter_input(INPUT_POST, 'username');
     }
 
     
@@ -56,29 +55,7 @@ class Signup {
     public function getConfirmpassword() {
         return $this->confirmpassword;
     }
-
-    public function setEmail($email) {
-        if ( Validator::emailIsValid($email) ) {
-            $this->email = $email;
-        }
-    }
-
-    public function setUsername($username) {
-        if ( Validator::nameIsValid($username) ) {
-            $this->username = $username;
-        }
-    }
-
-    public function setPassword($password) {
-        $this->password = $password;
-    }
-
-    public function setConfirmpassword($confirmpassword) {
-        $this->confirmpassword = $confirmpassword;
-    }
-
-
-
+    
    /**
     * A method to return all errors found in the post
     *
@@ -97,12 +74,13 @@ class Signup {
     * @return boolean
     */    
     public function emailEntryIsValid() {
-         
-         if ( empty($this->getEmail()) ) {
+        
+         $email = $this->getEmail();
+         if ( empty($email) ) {
             $this->errors["email"] = "Email is missing.";
          } else if ( !Validator::emailIsValid($this->getEmail()) ) {
             $this->errors["email"] = "Email is not valid.";                
-         } 
+         }
         
         return ( empty($this->errors["email"]) ? true : false ) ;
     }
