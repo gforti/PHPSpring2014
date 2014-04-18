@@ -28,7 +28,8 @@ class Signup {
     private $password;
     private $confirmpassword;
    
-    
+    private $errors = array();
+            
     function __construct() {
         $email = filter_input(INPUT_POST, 'email');
         $this->setEmail($email); 
@@ -63,7 +64,9 @@ class Signup {
     }
 
     public function setUsername($username) {
-        $this->username = $username;
+        if ( Validator::nameIsValid($username) ) {
+            $this->username = $username;
+        }
     }
 
     public function setPassword($password) {
@@ -76,7 +79,14 @@ class Signup {
 
 
 
-    
+   /**
+    * A method to return all errors found in the post
+    *
+    * @return array
+    */  
+    public function getErrors() {
+        return $this->errors;
+    }
     
     
     
