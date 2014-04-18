@@ -90,6 +90,22 @@ class Signup {
     
     
     
+    /**
+    * A method to check if a posted email is valid.
+    * Adds a custom message to the errors list key["email"]
+    *
+    * @return boolean
+    */    
+    public function emailEntryIsValid() {
+         
+         if ( empty($this->getEmail()) ) {
+            $this->errors["email"] = "Email is missing.";
+         } else if ( !Validator::emailIsValid($this->getEmail()) ) {
+            $this->errors["email"] = "Email is not valid.";                
+         } 
+        
+        return ( empty($this->errors["email"]) ? true : false ) ;
+    }
     
     
 }
