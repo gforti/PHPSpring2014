@@ -76,6 +76,7 @@ class Signup {
     public function emailEntryIsValid() {
         
          $email = $this->getEmail();
+         
          if ( empty($email) ) {
             $this->errors["email"] = "Email is missing.";
          } else if ( !Validator::emailIsValid($this->getEmail()) ) {
@@ -85,5 +86,30 @@ class Signup {
         return ( empty($this->errors["email"]) ? true : false ) ;
     }
     
+    
+    /**
+    * A static method to check if a Post request has been made.
+    *    
+    * @return boolean
+    */    
+    public function isPostRequest() {
+        return ( filter_input(INPUT_SERVER, 'REQUEST_METHOD') === 'POST' );
+    }
+    
+    
+    
+    /**
+    * A method to check if a posted email is valid.
+    * Adds a custom message to the errors list key["email"]
+    *
+    * @return boolean
+    */ 
+    public function entryIsValid(){
+        $this->emailEntryIsValid();
+        $this->usernameEntryIsValid();
+        $this->passwordEntryIsValid();
+        
+        return ( count($this->errors) ? false : true );
+    }
     
 }

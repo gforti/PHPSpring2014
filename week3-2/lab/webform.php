@@ -16,8 +16,15 @@ and open the template in the editor.
                 
             $signup = new Signup();
             
-           $signup->emailEntryIsValid();
-            print_r($signup->getErrors());
+            if ( $signup->isPostRequest() ) {
+                 $signup->emailEntryIsValid();
+            
+                 //todo print out error in a list
+                 // only if there is a count to the array
+                 // else data must be all valid
+                  print_r($signup->getErrors());
+            }
+          
         ?>
         
         
