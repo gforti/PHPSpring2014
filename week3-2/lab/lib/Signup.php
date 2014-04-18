@@ -32,12 +32,12 @@ class Signup {
             
     function __construct() {
        
-        $this->email = filter_input(INPUT_POST, 'email');
-      
+        $this->email = filter_input(INPUT_POST, 'email');      
         $this->username = filter_input(INPUT_POST, 'username');
+        $this->password = filter_input(INPUT_POST, 'password');
+        $this->confirmpassword = filter_input(INPUT_POST, 'confirmpassword');
     }
 
-    
     
     
     public function getEmail() {
@@ -84,6 +84,33 @@ class Signup {
          }
         
         return ( empty($this->errors["email"]) ? true : false ) ;
+    }
+    
+    /**
+    * A method to check if a posted username is valid.
+    * Adds a custom message to the errors list key["username"]
+    *
+    * @return boolean
+    */    
+    public function usernameEntryIsValid() {
+        
+         //todo put logic here (same as email)
+        
+        return ( empty($this->errors["username"]) ? true : false ) ;
+    }
+    
+    /**
+    * A method to check if a posted password is valid.
+    * Adds a custom message to the errors list key["password"]
+    *
+    * @return boolean
+    */    
+    public function passwordEntryIsValid() {
+        
+         //todo put logic here (same as email)
+        // also check if it matches confirmpassword
+        
+        return ( empty($this->errors["password"]) ? true : false ) ;
     }
     
     
