@@ -27,8 +27,7 @@
         $dbs->execute();
         $results = $dbs->fetch(PDO::FETCH_ASSOC);
 
-        print_r($results);
-        if ( count($results) ) {
+        if ( is_array($results) && count($results) ) {
         echo '<table border="1">'; 
         echo '<tr><th>ID</th><th>Email</th>';
         echo '<th>username</th><th>password</th></tr>';
