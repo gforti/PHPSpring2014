@@ -15,6 +15,9 @@ and open the template in the editor.
         <?php
         // put your code here
         $signup = new Signup();
+             
+       // print_r($_SERVER); 
+        
         $errors = array();
         if ( Util::isPostRequest() ){
             
