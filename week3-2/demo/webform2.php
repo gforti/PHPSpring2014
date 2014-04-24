@@ -22,6 +22,9 @@
                        
         }
         
+        
+        //$signup2->displayErrors();
+        
             if ( count($errors) ) {
                 echo '<ul class="error">';
                 foreach ($errors as $value) {

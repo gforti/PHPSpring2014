@@ -45,7 +45,7 @@ class Validator {
     * @return boolean
     */    
     public static function passwordIsValid($password) {
-        
+        // strlen($password) >= 6
         return false;
     }
 }
