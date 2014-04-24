@@ -39,8 +39,7 @@ class Signup2 {
     public function entryIsValid(){
         $this->emailEntryIsValid();
         $this->usernameEntryIsValid();
-        //$this->passwordEntryIsValid();
-       // $this->ComfirmPasswordEntryIsValid();
+        $this->passwordEntryIsValid();       
         return ( count($this->errors) ? false : true );
     }
     
@@ -62,18 +61,14 @@ class Signup2 {
     * @return boolean
     */    
     public function passwordEntryIsValid() {
-                
-        return true ;
-    }
-    
-    /**
-    * A method to check if a posted confirm password is valid.
-    * Adds a custom message to the errors list key["confirmpassword"]
-    *
-    * @return boolean
-    */    
-    public function ComfirmPasswordEntryIsValid() {
-                
+        $password = $this->getPassword();
+        $confirmpassword = $this->getConfirmPassword();
+        
+        if ( $password !==  $confirmpassword) {
+            
+        }
+        
+        
         return true ;
     }
     
