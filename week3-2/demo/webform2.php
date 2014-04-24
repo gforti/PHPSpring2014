@@ -14,14 +14,12 @@
         $errors = array();
         if ( Util::isPostRequest() ){
             
-            /*
-            if ( $signup->entryIsValid() ) {
+            if ( $signup2->entryIsValid() ) {
                 echo '<p class="success">Data would be process and a sucess message is displayed</p>';
             } else {
                 $errors = $signup2->getErrors();
             }
-             
-             */
+                       
         }
         
             if ( count($errors) ) {

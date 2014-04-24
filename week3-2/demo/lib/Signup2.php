@@ -30,6 +30,53 @@ class Signup2 {
     }
     
     
+     /**
+    * A method to check if a posted email is valid.
+    * Adds a custom message to the errors list key["email"]
+    *
+    * @return boolean
+    */ 
+    public function entryIsValid(){
+        $this->emailEntryIsValid();
+        $this->usernameEntryIsValid();
+        //$this->passwordEntryIsValid();
+       // $this->ComfirmPasswordEntryIsValid();
+        return ( count($this->errors) ? false : true );
+    }
+    
+    /**
+    * A method to check if a posted username is valid.
+    * Adds a custom message to the errors list key["username"]
+    *
+    * @return boolean
+    */    
+    public function usernameEntryIsValid() {
+                
+        return true ;
+    }
+    
+    /**
+    * A method to check if a posted password is valid.
+    * Adds a custom message to the errors list key["username"]
+    *
+    * @return boolean
+    */    
+    public function passwordEntryIsValid() {
+                
+        return true ;
+    }
+    
+    /**
+    * A method to check if a posted confirm password is valid.
+    * Adds a custom message to the errors list key["confirmpassword"]
+    *
+    * @return boolean
+    */    
+    public function ComfirmPasswordEntryIsValid() {
+                
+        return true ;
+    }
+    
     
     /**
     * A method to check if a posted email is valid.
@@ -38,10 +85,10 @@ class Signup2 {
     * @return boolean
     */    
     public function emailEntryIsValid() {
-         
-         if ( empty($this->getEmail()) ) {
+         $email = $this->getEmail();
+         if ( empty($email) ) {
             $this->errors["email"] = "Email is missing.";
-         } else if ( !Validator::emailIsValid($this->getEmail()) ) {
+         } else if ( !Validator::emailIsValid($email) ) {
             $this->errors["email"] = "Email is not valid.";                
          } 
         
