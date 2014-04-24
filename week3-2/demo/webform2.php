@@ -9,9 +9,10 @@
     <body>
         <?php
         // put your code here
-        $signup = new Signup2();
+        $signup2 = new Signup2();
              
-       
+        
+       echo $signup2->getEmail();
         
         $errors = array();
         if ( Util::isPostRequest() ){
@@ -40,7 +41,7 @@
            <fieldset>
 		<legend>Sign-up Form:</legend>
                 <label for="email">E-mail:</label> 
-                <input id="email" type="text" name="email" value="<?php echo $signup->email; ?>" /> <br />
+                <input id="email" type="text" name="email" value="<?php echo $signup2->getEmail(); ?>" /> <br />
                
                 <label for="username">Username:</label>
                 <input id="username" type="text" name="username" value="" /> <br /> 
