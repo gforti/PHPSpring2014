@@ -14,17 +14,19 @@
 class Signup2 {
     //put your code here
     
+    protected $errors = array();
+    
     private $email;
     private $username;
     private $password;
     private $confirmPassword;
     
 
-        public function __construct() {
-        $this->setEmail(filter_input(INPUT_POST, 'email'));
-        $this->username = filter_input(INPUT_POST, 'username');
-        $this->password = filter_input(INPUT_POST, 'password');
-        $this->confirmPassword = filter_input(INPUT_POST, 'confirmPassword');        
+   public function __construct() {
+        $this->setEmail( filter_input(INPUT_POST, 'email') );
+        $this->setUsername( filter_input(INPUT_POST, 'username') );
+        $this->setPassword(filter_input(INPUT_POST, 'password'));
+        $this->setConfirmPassword(filter_input(INPUT_POST, 'confirmPassword'));        
     }
     
     
@@ -73,6 +75,16 @@ class Signup2 {
 
     private function setConfirmPassword($confirmPassword) {
         $this->confirmPassword = $confirmPassword;
+    }
+    
+    
+    /**
+    * A method to return all errors found in the post
+    *
+    * @return array
+    */  
+    public function getErrors() {
+        return $this->errors;
     }
     
 }

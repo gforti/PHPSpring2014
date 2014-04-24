@@ -10,10 +10,7 @@
         <?php
         // put your code here
         $signup2 = new Signup2();
-             
-        
-       echo $signup2->getEmail();
-        
+              
         $errors = array();
         if ( Util::isPostRequest() ){
             
@@ -21,7 +18,7 @@
             if ( $signup->entryIsValid() ) {
                 echo '<p class="success">Data would be process and a sucess message is displayed</p>';
             } else {
-                $errors = $signup->getErrors();
+                $errors = $signup2->getErrors();
             }
              
              */
@@ -44,7 +41,7 @@
                 <input id="email" type="text" name="email" value="<?php echo $signup2->getEmail(); ?>" /> <br />
                
                 <label for="username">Username:</label>
-                <input id="username" type="text" name="username" value="" /> <br /> 
+                <input id="username" type="text" name="username" value="<?php echo $signup2->getUsername(); ?>" /> <br /> 
                 
                 <label for="password">Password:</label>
                 <input id="password" type="password" name="password" /> <br />           
