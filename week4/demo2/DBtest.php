@@ -9,12 +9,37 @@
         <?php
         // put your code here
         
+        /*
+         * PDO is a built-in to PHP, you can use it to connect to a Database
+         */
         $db = new PDO(Config::DB_DNS, Config::DB_USER, Config::DB_PASSWORD);
         
+        /*
+         * Once you are connected to can prepare a statement.
+         */
        $dbs = $db->prepare('select * from signup');
+       
+       /*
+        * after a statement is prepared you can execute or commit that statement.
+        */
        $dbs->execute();
+       
+       /*
+        * once the query is committed/executed you can fetch back the results.
+        * in this case there is more than one result so we will fetch them all
+        * the fetchall function takes a param, in this case we want the results to
+        * come back as an associative array (key=>value) so it's easier to access
+        * the data.  Note that this is a multidimensional array
+        */
        $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
        
+       
+       /*
+        * All results should return back as an array, otherwise the query failed
+        * since this is a multidimensional array, the $key is the index of the array
+        * and the value is the associative array with the key values being a column names
+        * of the database table you selected
+        */
        echo '<table border="1">'; 
        echo '<tr><th>Index</th><th>ID</th><th>Email</th>';
        echo '<th>username</th><th>password</th></tr>';

@@ -12,6 +12,12 @@
         $dbc = new DB();
         $db = $dbc->getDB();
         
+        /*
+         * Use the class given to get a database connection.
+         * If no connection can be made the getDB function will return
+         * null.  You can handle the error as you please.
+         */
+        
         if ( null !== $db) {
             $dbs = $db->prepare('select * from signup');
             $dbs->execute();

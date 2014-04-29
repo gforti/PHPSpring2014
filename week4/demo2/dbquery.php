@@ -14,6 +14,24 @@
         // dbquery.php?id=2  
         // dbquery.php?username=test
         
+        /*
+         * The code here works the same as DBtest.php
+         * But notice that there is a where clause in the prepare function for the SQL query
+         * You can use the colon(:) to set placeholder variables and replace them with a value
+         * using the bindParam function.
+         * 
+         * We are getting our values using a $_GET super global built-into PHP
+         * $_GET variables are passed in the url.
+         * 
+         * e.g.
+         * URL => dbquery.php?id=2
+         * PHP will set in the $_GET array
+         * $_GET['id'] = 2;
+         * 
+         * You can access these values like you would with a $_POST
+         * filter_input(INPUT_GET, 'id');
+         */
+        
         $id = filter_input(INPUT_GET, 'id');
         $username = filter_input(INPUT_GET, 'username');
         
@@ -25,6 +43,11 @@
         $dbs->bindParam(':username', $username, PDO::PARAM_STR);
 
         $dbs->execute();
+        /*
+         * Notice since we are only looking for 1 record we use the fetch function
+         * not the fetchAll function.  Rather than a multidimensional array we get just
+         * a plan associative array
+         */
         $results = $dbs->fetch(PDO::FETCH_ASSOC);
 
         if ( is_array($results) && count($results) ) {

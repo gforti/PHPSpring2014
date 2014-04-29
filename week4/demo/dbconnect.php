@@ -1,3 +1,4 @@
+<?php include 'dependency.php'; ?>
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -12,7 +13,15 @@ and open the template in the editor.
     <body>
         <?php
         // put your code here
-        
+            
+        /*
+         * One a database class instanced is created you can call the function
+         * to get the Dabase Object.
+         * PDO is a PHP built-in object that allows you to connect to many different 
+         * databases, such as MySQL, Oracle, Microsoft SQL, etc.
+         * All the work of security and maintenance is already done
+         * 
+         */
             $dbo = new DB(); // database object            
             $db = $dbo->getDB();
             
