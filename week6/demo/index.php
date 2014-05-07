@@ -9,12 +9,12 @@
         <?php
         // put your code here
             $msg = '';
-
+                
             if ( Util::isPostRequest() ) {
                 $checkcode = new Passcode();
 
                 if ( $checkcode->isValidPasscode() ) {
-
+                    header('location: viewaddress.php');
                 } else {                    
                     $msg = 'Passcode is not valid.';
                 }
