@@ -17,7 +17,7 @@
 
                 if ( $checkcode->isValidPasscode() ) {
                     $_SESSION['validcode'] = true;
-                    header('location: viewaddress.php');
+                    Util::redirect('viewaddress');                   
                 } else {                    
                     $msg = 'Passcode is not valid.';
                 }

@@ -15,7 +15,7 @@ and open the template in the editor.
         // put your code here
         
         if ( !isset($_SESSION['validcode']) || !$_SESSION['validcode'] ) {
-            header('location: index.php');
+           Util::redirect('index');
         }
         
         ?>
