@@ -9,6 +9,12 @@
         <?php
         // put your code here
         
+        if ( Util::isPostRequest() ) {
+            $checkcode = new Passcode();
+            if ( $checkcode->isValidPasscode() ) {
+                
+            }
+        }
        
         ?>
         
