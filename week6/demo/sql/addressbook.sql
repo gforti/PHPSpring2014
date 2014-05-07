@@ -1,6 +1,4 @@
---
--- Database: `phplab`
---
+
 CREATE TABLE IF NOT EXISTS `addressbook` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `address` varchar(200) COLLATE utf8_unicode_ci NOT NULL,
