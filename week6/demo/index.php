@@ -8,14 +8,21 @@
     <body>
         <?php
         // put your code here
-        
-        if ( Util::isPostRequest() ) {
-            $checkcode = new Passcode();
-            if ( $checkcode->isValidPasscode() ) {
-                
+            $msg = '';
+
+            if ( Util::isPostRequest() ) {
+                $checkcode = new Passcode();
+
+                if ( $checkcode->isValidPasscode() ) {
+
+                } else {                    
+                    $msg = 'Passcode is not valid.';
+                }
             }
-        }
-       
+
+            if ( !empty($msg)) {
+                echo '<p>', $msg, '</p>';
+            }
         ?>
         
         
@@ -23,7 +30,7 @@
            <fieldset>
 		<legend>Data Form:</legend>
                 <label for="code">Passcode</label> 
-                <input type="text" name="passcode" id="code" />                
+                <input type="password" name="passcode" id="code" />                
                 <input type="submit" value="Submit" />
            </fieldset>
         </form>
