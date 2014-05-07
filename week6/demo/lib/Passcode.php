@@ -17,7 +17,7 @@ class Passcode {
     private $passcode;
     
     function __construct() {
-        $this->setPasscode(filter_input(INPUT_POST, 'passcode'));                
+        $this->setPasscode(filter_input(INPUT_POST, 'passcode'));
     }
     
     public function getPasscode() {
