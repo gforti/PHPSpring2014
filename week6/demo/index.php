@@ -17,8 +17,7 @@
            <fieldset>
 		<legend>Data Form:</legend>
                 <label for="code">Passcode</label> 
-                <input type="text" name="passcode" id="code" />
-                
+                <input type="text" name="passcode" id="code" />                
                 <input type="submit" value="Submit" />
            </fieldset>
         </form>

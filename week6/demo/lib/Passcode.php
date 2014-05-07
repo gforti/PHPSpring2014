@@ -19,7 +19,7 @@ class Passcode {
     function __construct() {
         
     }
-
+    
     public function getPasscode() {
         return $this->passcode;
     }
@@ -29,5 +29,5 @@ class Passcode {
     }
 
 
-    
+
 }
