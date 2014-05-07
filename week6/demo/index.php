@@ -8,14 +8,16 @@
     <body>
         <?php
         // put your code here
+        
+       
         ?>
         
         
         <form name="mainform" action="#" method="post"> 
            <fieldset>
 		<legend>Data Form:</legend>
-                <label for="passcode">Passcode</label> 
-                <input name="passcode" id="passcode" />
+                <label for="code">Passcode</label> 
+                <input type="text" name="passcode" id="code" />
                 
                 <input type="submit" value="Submit" />
            </fieldset>
