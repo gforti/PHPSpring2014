@@ -29,17 +29,18 @@ and open the template in the editor.
         
         <?php
         echo '<table border="1">'; 
-            echo '<tr><th>Index</th><th>ID</th><th>Address</th>';
-            echo '<th>City</th><th>State</th><th>ZIP</th><th>name</th></tr>';
+            echo '<tr><th>Index</th><th>Address</th>';
+            echo '<th>City</th><th>State</th><th>ZIP</th><th>name</th><th>Command</th></tr>';
             foreach ($addressResults as $key => $value) {
                 echo '<tr>';
                  echo '<td>', $key ,'</td>';
-                 echo '<td>', $value['id'] ,'</td>';
+                 
                  echo '<td>', $value['address'] ,'</td>';
                  echo '<td>', $value['city'] ,'</td>';
                  echo '<td>', $value['state'] ,'</td>';          
                  echo '<td>', $value['zip'] ,'</td>';          
                  echo '<td>', $value['name'] ,'</td>';          
+                 echo '<td><a href="updateaddress.php?id=', $value['id'] ,'">Update</a> </td>';         
                 echo '</tr>';
             }
             echo '</table>';

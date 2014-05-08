@@ -51,4 +51,11 @@ class Util {
         die();
     }
     
+    
+    public static function confirmAccess() {
+        if ( !isset($_SESSION['validcode']) || !$_SESSION['validcode'] ) {
+           Util::redirect('index');
+        }
+    }
+    
 }
