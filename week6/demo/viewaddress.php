@@ -19,13 +19,31 @@ and open the template in the editor.
         }
         $address = new AddressBook();
         
-        print_r($address->read());
+        $addressResults = $address->read();
         
         ?>
         
        
         
         <h1>View Address Book</h1>
+        
+        <?php
+        echo '<table border="1">'; 
+            echo '<tr><th>Index</th><th>ID</th><th>Address</th>';
+            echo '<th>City</th><th>State</th><th>ZIP</th><th>name</th></tr>';
+            foreach ($addressResults as $key => $value) {
+                echo '<tr>';
+                 echo '<td>', $key ,'</td>';
+                 echo '<td>', $value['id'] ,'</td>';
+                 echo '<td>', $value['address'] ,'</td>';
+                 echo '<td>', $value['city'] ,'</td>';
+                 echo '<td>', $value['state'] ,'</td>';          
+                 echo '<td>', $value['zip'] ,'</td>';          
+                 echo '<td>', $value['name'] ,'</td>';          
+                echo '</tr>';
+            }
+            echo '</table>';
+        ?>
         
         
     </body>

@@ -27,8 +27,33 @@ class AddressBook extends DB {
         
     }
     
-    public function read() {
-        $results = array();
+    public function read($id = 0) {
+       if ($id !== 0) {
+           return $this->readByID($id);
+       } else {
+           return $this->readAll();
+       }
+        
+    }
+    
+     private function readByID($id){
+           $results = array();
+           
+            if ( null !== $this->getDB() ) {
+            $dbs = $this->getDB()->prepare('select * from addressbook where id = :id limit 1');
+            $dbs->bindParam(':id', $id, PDO::PARAM_INT);
+            
+            if ( $dbs->execute() && $dbs->rowCount() > 0 ) {
+                $results = $dbs->fetch(PDO::FETCH_ASSOC);
+            }
+        
+         }   
+           
+           return $results;
+     }
+    
+    private function readAll(){
+         $results = array();
         
          if ( null !== $this->getDB() ) {
             $dbs = $this->getDB()->prepare('select * from addressbook');
@@ -37,11 +62,13 @@ class AddressBook extends DB {
                 $results = $dbs->fetchAll(PDO::FETCH_ASSOC);
             }
         
-         }
-        
+         }        
         return $results;
     }
-    
+
+
+
+
     public function delete() {
         
     }
