@@ -17,6 +17,9 @@ and open the template in the editor.
         if ( !isset($_SESSION['validcode']) || !$_SESSION['validcode'] ) {
            Util::redirect('index');
         }
+        $address = new AddressBook();
+        
+        print_r($address->read());
         
         ?>
         
