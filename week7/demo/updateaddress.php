@@ -29,13 +29,13 @@
          
          $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
          
-         if ( !is_int($id) ) {
-             Util::redirect('viewaddress');
-         }
-         
          $addressResult = $address->read($id);
           //print_r($addressResult);
           
+         if ( !is_array($addressResult) || count($addressResult) <= 0 ) {
+             Util::redirect('viewaddress');
+         }
+         
         ?>
         
         <form name="mainform" action="#" method="post"> 
