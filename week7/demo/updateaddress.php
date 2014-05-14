@@ -16,8 +16,8 @@
          
          
          if ( Util::isPostRequest() ) {
-              
-              $AddressbookModel = new AddressbookModel($_POST);
+             
+              $AddressbookModel = new AddressbookModel(filter_input_array(INPUT_POST));
               
               if ( $address->update($AddressbookModel) ) {
                   echo '<p>Address updated</p>';
@@ -28,6 +28,10 @@
          
          
          $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+         
+         if ( !is_int($id) ) {
+             Util::redirect('viewaddress');
+         }
          
          $addressResult = $address->read($id);
           //print_r($addressResult);
