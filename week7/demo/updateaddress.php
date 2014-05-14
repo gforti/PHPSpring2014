@@ -14,6 +14,19 @@
         
          $address = new AddressBook();
          
+         
+         if ( Util::isPostRequest() ) {
+              
+              $AddressbookModel = new AddressbookModel($_POST);
+              
+              if ( $address->update($AddressbookModel) ) {
+                  echo '<p>Address updated</p>';
+              } else {
+                   echo '<p>Address Could not update</p>';
+              }
+          }
+         
+         
          $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
          //$id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
          
@@ -21,7 +34,7 @@
           print_r($addressResult);
           
           
-         // echo $addressResult['address'];
+         
           
         
         ?>

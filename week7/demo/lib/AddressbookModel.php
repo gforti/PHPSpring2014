@@ -14,12 +14,12 @@
 class AddressbookModel {
     //put your code here
     
-    private $address;
-    private $city;
-    private $state;
-    private $zip;
-    private $name;
-    private $id;
+    public $address;
+    public $city;
+    public $state;
+    public $zip;
+    public $name;
+    public $id;
     
     
     function __construct($paramArr) {        
