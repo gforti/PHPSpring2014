@@ -41,7 +41,7 @@ and open the template in the editor.
                  echo '<td>', $value['zip'] ,'</td>';          
                  echo '<td>', $value['name'] ,'</td>';          
                  //echo '<td><a href="updateaddress.php?id=', $value['id'] ,'">Edit</a> </td>';         
-                 echo '<td><form name="mainform" action="updateaddress.php" method="post"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
+                 echo '<td><form name="mainform" action="updateaddress.php" method="get"><input name="id" type="hidden" value="', $value['id'] ,'" /><input type="submit" value="Edit" /></form> </td>';     
                 echo '</tr>';
             }
             echo '</table>';
