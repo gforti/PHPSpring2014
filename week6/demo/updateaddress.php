@@ -10,13 +10,19 @@
         // put your code here
         
         Util::confirmAccess();
+      
         
          $address = new AddressBook();
          
-         $id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+         //$id = filter_input(INPUT_GET, 'id', FILTER_VALIDATE_INT);
+         $id = filter_input(INPUT_POST, 'id', FILTER_VALIDATE_INT);
          
          $addressResult = $address->read($id);
           print_r($addressResult);
+          
+          
+          
+          
         
         ?>
     </body>
