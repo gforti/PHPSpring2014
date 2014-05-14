@@ -6,3 +6,7 @@ Add a create page that will add a new record to the database.
 Please add java style doc comments in all of the following classes.
 AddressBook.php
 Passcode.php
+
+Hint: when doing the create(insert) feature, make sure to remove
+all references of ID, since the MySQL database will take of that for
+you.
