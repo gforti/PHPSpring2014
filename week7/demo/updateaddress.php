@@ -29,8 +29,20 @@
         <form name="mainform" action="#" method="post"> 
            <fieldset>
 		<legend>Update:</legend>
+                <label for="name">Address:</label> 
+                <input id="name" type="text" name="name" value="<?php echo $addressResult['name']; ?>" /> <br />
+               
                 <label for="address">Address:</label> 
                 <input id="address" type="text" name="address" value="<?php echo $addressResult['address']; ?>" /> <br />
+               
+                <label for="city">City:</label> 
+                <input id="city" type="text" name="city" value="<?php echo $addressResult['city']; ?>" /> <br />
+               
+                <label for="state">State:</label> 
+                <input id="state" type="text" name="state" value="<?php echo $addressResult['state']; ?>" /> <br />
+                              
+                <label for="zip">ZIP:</label> 
+                <input id="zip" type="text" name="zip" value="<?php echo $addressResult['zip']; ?>" /> <br />
                
                 <input type="submit" value="Submit" />
             </fieldset>
