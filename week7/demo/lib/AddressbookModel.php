@@ -22,12 +22,36 @@ class AddressbookModel {
     private $id;
     
     
-    function __construct($paramArr) {
-        
+    function __construct($paramArr) {        
+        $this->map($paramArr);
     }
 
     
     public function map($paramArr) {
+        
+        if ( ! is_array($paramArr) ) {
+            return false;
+        }
+        
+        if ( array_key_exists('address', $paramArr) ) {
+            $this->setAddress($paramArr['address']);
+        }
+        if ( array_key_exists('city', $paramArr) ) {
+            $this->setCity($paramArr['city']);
+        }
+        if ( array_key_exists('state', $paramArr) ) {
+            $this->setState($paramArr['state']);
+        }
+        if ( array_key_exists('zip', $paramArr) ) {
+            $this->setZip($paramArr['zip']);
+        }
+        if ( array_key_exists('name', $paramArr) ) {
+            $this->setName($paramArr['name']);        
+        }
+        if ( array_key_exists('id', $paramArr) ) {
+            $this->setId($paramArr['id']);
+        }
+        
         
     }
     
