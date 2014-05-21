@@ -13,8 +13,9 @@ and open the template in the editor.
         <?php
         // put your code here
         
-        error_log("this is a test");
+        //error_log("this is a test");
         
+             
         error_log("\nthis is a test", 3, "logs/errors.log");
         
         //print_r($statement->errorInfo());
