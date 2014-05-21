@@ -16,6 +16,10 @@ and open the template in the editor.
         error_log("this is a test");
         
         error_log("\nthis is a test", 3, "logs/errors.log");
+        
+        //print_r($statement->errorInfo());
+        
+        //intval($db->lastInsertId());
         ?>
     </body>
 </html>
