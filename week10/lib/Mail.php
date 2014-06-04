@@ -27,10 +27,18 @@ class Mail extends MailModel {
                 
         $to = Util::cleanForHtml($this->getTo());
         $subject = Util::cleanForHtml($this->getSubject()); 
-        $message = Util::messageMailWrap(Util::cleanForHtml($this->getMessage()));
-       
+        $from = Util::cleanForHtml($this->getFrom()); 
+        $message = Util::cleanForHtml($this->getMessage());
         
-        return mail($to, $subject, $message, $headers);
+        $html = '<html><body>';
+        $html .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+        $html .= "<tr style='background: #eee;'><td><strong>From:</strong> </td><td>" . $from . "</td></tr>";
+        $html .= "<tr><td><strong>Message:</strong> </td><td>" . $message . "</td></tr>";
+        $html .= "</table>";
+        $html .= "</body></html>";
+       
+        $html = Util::messageMailWrap($html);
+        return mail($to, $subject, $html, $headers);
         
     }
     

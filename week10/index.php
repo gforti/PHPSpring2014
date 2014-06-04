@@ -10,6 +10,7 @@
         // put your code here
         define('WAIT_SECONDS', 10);
         
+        //http://saas.site88.net/mail/index.php
         
         if( isset($_SESSION['last_post']) && (time() - $_SESSION['last_post']) < WAIT_SECONDS) {
             die('stop spamming !');
@@ -27,9 +28,12 @@
             
              $_SESSION['last_post'] = time();
             
-            $mailer = new Mail(array("to"=>'gforti@NEIT.EDU',"subject"=>'testing',"message"=>$contactModel->getMessage()));
+            $mailer = new Mail(array("to"=>'gforti@NEIT.EDU',"subject"=>'testing',"message"=>$contactModel->getMessage(),"from"=>$contactModel->getFrom()));
             if( $mailer->send()) {
-                echo "message sent";
+                echo '<p>Regular message sent</p>';
+            }
+            if( $mailer->sendHtml()) {
+                echo '<p>HTML message sent</p>';
             }
         }
         
