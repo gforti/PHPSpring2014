@@ -9,6 +9,7 @@
         <?php
         // put your code here
         define('WAIT_SECONDS', 10);
+        define('MY_EMAIL', 'someone@somewhere.com');
         
         //http://saas.site88.net/mail/index.php
         
@@ -28,7 +29,7 @@
             
              $_SESSION['last_post'] = time();
             
-            $mailer = new Mail(array("to"=>'gforti@NEIT.EDU',"subject"=>'testing',"message"=>$contactModel->getMessage(),"from"=>$contactModel->getFrom()));
+            $mailer = new Mail(array("to"=>MY_EMAIL,"subject"=>'testing',"message"=>$contactModel->getMessage(),"from"=>$contactModel->getFrom()));
             if( $mailer->send()) {
                 echo '<p>Regular message sent</p>';
             }
