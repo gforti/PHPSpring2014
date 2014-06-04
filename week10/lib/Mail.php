@@ -8,7 +8,13 @@
 class Mail extends MailModel {
     //put your code here
     
-    
+    public function mailParamsValid() {
+        
+      return (  Validator::emailIsValid($this->getTo()) && 
+                Validator::nameIsValid($this->getFrom()) &&
+                Validator::messageIsValid($this->getMessage())
+              );  
+    }
     public function send() {
         
         $to = Util::cleanForHtml($this->getTo());

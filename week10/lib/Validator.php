@@ -45,7 +45,7 @@ class Validator {
     * @return boolean
     */    
     public static function messageIsValid($msg) {
-        return ( is_string($msg) && !empty($msg) && strlen($msg) > 20 );    
+        return ( is_string($msg) && !empty($msg) && strlen($msg) > 5 );    
     }
         
 }
