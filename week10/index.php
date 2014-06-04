@@ -8,15 +8,13 @@
     <body>
         <?php
         // put your code here
-        define('WAIT_SECONDS', 10);
-        define('MY_EMAIL', 'someone@somewhere.com');
+        define('WAIT_SECONDS', 5);
         
         //http://saas.site88.net/mail/index.php
         
         if( isset($_SESSION['last_post']) && (time() - $_SESSION['last_post']) < WAIT_SECONDS) {
             die('stop spamming !');
         }
-
            
         
         if ( !isset($_SESSION['token']) ) {
@@ -27,14 +25,24 @@
         
         if ( Util::isPostRequest() && $_SESSION['token'] === $contactModel->getToken() ) {
             
-             $_SESSION['last_post'] = time();
-            
-            $mailer = new Mail(array("to"=>MY_EMAIL,"subject"=>'testing',"message"=>$contactModel->getMessage(),"from"=>$contactModel->getFrom()));
-            if( $mailer->send()) {
-                echo '<p>Regular message sent</p>';
-            }
-            if( $mailer->sendHtml()) {
-                echo '<p>HTML message sent</p>';
+            $_SESSION['last_post'] = time();
+                       
+            $mailer = new Mail(array(
+                "to"=>$contactModel->getEmail(),
+                "subject"=>'testing',
+                "message"=>$contactModel->getMessage(),
+                "from"=>$contactModel->getFrom()
+            ));
+               
+            if( $mailer->mailParamsValid() ) {
+                if( $mailer->send()) {
+                    echo '<p>Regular message sent</p>';
+                }
+                if( $mailer->sendHtml()) {
+                    echo '<p>HTML message sent</p>';
+                }
+            } else {
+                echo '<p>Message Not sent</p>';
             }
         }
         
